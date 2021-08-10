@@ -11,7 +11,6 @@ from time import sleep
 import requests
 from bs4 import BeautifulSoup
 import pandas
-from requests.models import guess_filename
 
 # warningが出ないようにする
 warnings.filterwarnings('ignore')
