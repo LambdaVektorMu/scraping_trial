@@ -1,11 +1,9 @@
 #!/home/l_vektor_m/venv3.8/bin/python
 # coding: utf-8
 
-import matplotlib
 import matplotlib.pyplot as plot
 import pandas
 
-#matplotlib.rc('font', family='Noto Sans CJK JP')
 # csvファイルをデータフレームに格納する
 enc = 'utf-8-sig'
 csv_title_game_price_value = 'ルデヤでの各ゲーム機の買取値段推移（値のみ）.csv'
@@ -30,13 +28,15 @@ days_plot = [d*12+3 for d in range(days)]
 print(days_plot)
 label_list = [plot_xlabel_list[days_plot[ll]] for ll in range(days) if days_plot[ll] < len(plot_xlabel_list)]
 print(label_list)
-FONT_SIZE=7
+FONT_SIZE=5
 plot.xticks(days_plot, label_list, fontsize=FONT_SIZE)
 plot.legend()
-FIG_W = 12
+FIG_W = 24
 fig.set_figwidth(FIG_W)
 
 plot.title('ルデヤ買取価格')
+plot.ylabel('価格（円）')
+plot.xlabel('日時')
 plot.savefig('rudeya_PS5BR-PS5DE.png')
 plot.close()
 
@@ -45,6 +45,9 @@ plot.plot(data_frame['date']+data_frame['hour'], data_frame['PlayStation5'], '.-
 plot.xticks(days_plot, label_list, fontsize=FONT_SIZE)
 plot.legend()
 fig.set_figwidth(FIG_W)
+plot.title('ルデヤ買取価格')
+plot.ylabel('価格（円）')
+plot.xlabel('日時')
 plot.savefig('rudeya_PS5BR.png')
 plot.close()
 
@@ -53,6 +56,9 @@ plot.plot(data_frame['date']+data_frame['hour'], data_frame['PlayStation5 DE'], 
 plot.xticks(days_plot, label_list, fontsize=FONT_SIZE)
 plot.legend()
 fig.set_figwidth(FIG_W)
+plot.title('ルデヤ買取価格')
+plot.ylabel('価格（円）')
+plot.xlabel('日時')
 plot.savefig('rudeya_PS5DE.png')
 plot.close()
 
@@ -61,6 +67,9 @@ plot.plot(data_frame['date']+data_frame['hour'], data_frame['Switchグレー'], 
 plot.xticks(days_plot, label_list, fontsize=FONT_SIZE)
 plot.legend()
 fig.set_figwidth(FIG_W)
+plot.title('ルデヤ買取価格')
+plot.ylabel('価格（円）')
+plot.xlabel('日時')
 plot.savefig('rudeya_Switch_G.png')
 plot.close()
 
@@ -69,6 +78,9 @@ plot.plot(data_frame['date']+data_frame['hour'], data_frame['Switchネオン'], 
 plot.xticks(days_plot, label_list, fontsize=FONT_SIZE)
 plot.legend()
 fig.set_figwidth(FIG_W)
+plot.title('ルデヤ買取価格')
+plot.ylabel('価格（円）')
+plot.xlabel('日時')
 plot.savefig('rudeya_Switch_N.png')
 plot.close()
 
@@ -78,6 +90,9 @@ plot.plot(data_frame['date']+data_frame['hour'], data_frame['Switchネオン'], 
 plot.xticks(days_plot, label_list, fontsize=FONT_SIZE)
 plot.legend()
 fig.set_figwidth(FIG_W)
+plot.title('ルデヤ買取価格')
+plot.ylabel('価格（円）')
+plot.xlabel('日時')
 plot.savefig('rudeya_Switch.png')
 plot.close()
 
