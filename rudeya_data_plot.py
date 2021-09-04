@@ -21,17 +21,18 @@ xlabel_list = (data_frame['date']+data_frame['hour']).to_list()
 # 日本語を抜いて簡略表示
 plot_xlabel_list = [l.replace('2021年', '').replace('月', '/').replace('日', ' ') for l in xlabel_list]
 # 12時間毎に表示
+PER = 24
 print(len(plot_xlabel_list), plot_xlabel_list)
-days = len(plot_xlabel_list)//12
+days = len(plot_xlabel_list)//PER
 print(days)
-days_plot = [d*12+3 for d in range(days)]
+days_plot = [d*PER+3 for d in range(days)]
 print(days_plot)
 label_list = [plot_xlabel_list[days_plot[ll]] for ll in range(days) if days_plot[ll] < len(plot_xlabel_list)]
 print(label_list)
 FONT_SIZE=5
 plot.xticks(days_plot, label_list, fontsize=FONT_SIZE)
 plot.legend()
-FIG_W = 24
+FIG_W = 28
 fig.set_figwidth(FIG_W)
 
 plot.title('ルデヤ買取価格')
