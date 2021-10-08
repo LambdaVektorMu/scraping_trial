@@ -22,7 +22,7 @@ warnings.filterwarnings('ignore')
 game_category = [1, 2, 3]
 # 対象のid
 # Switchグレー Switchネオン SwitchLiteターコイズ
-Switch_category = ['focused2', 'focused3', 'focused7']
+Switch_category = ['focused2', 'focused3', 'focused7', 'focused1088', 'focused1087']
 # PS5 PS5-DE
 PlayStation_category = ['focused386', 'focused387']
 # XboxSX XboxSS
@@ -61,6 +61,8 @@ game_price_dic = {
     'Switchグレー': buy_price[Switch_category[0]],
     'Switchネオン': buy_price[Switch_category[1]],
     'SwitchLiteターコイズ': buy_price[Switch_category[2]],
+    'Switch有機ELネオン': buy_price[Switch_category[3]],
+    'Switch有機ELホワイト': buy_price[Switch_category[4]],
 }
 
 game_price_value_dic = {
@@ -73,6 +75,8 @@ game_price_value_dic = {
     'Switchグレー': buy_price_value[Switch_category[0]],
     'Switchネオン': buy_price_value[Switch_category[1]],
     'SwitchLiteターコイズ': buy_price_value[Switch_category[2]],
+    'Switch有機ELネオン': buy_price_value[Switch_category[3]],
+    'Switch有機ELホワイト': buy_price_value[Switch_category[4]],
 }
 
 # from pprint import pprint
@@ -86,6 +90,8 @@ columns_sort = ['date',
                 'hour',
                 'PlayStation5',
                 'PlayStation5 DE',
+                'Switch有機ELホワイト',
+                'Switch有機ELネオン',
                 'Switchネオン',
                 'Switchグレー',
                 'SwitchLiteターコイズ',
