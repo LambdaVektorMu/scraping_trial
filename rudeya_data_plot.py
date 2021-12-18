@@ -9,7 +9,7 @@ enc = 'utf-8-sig'
 csv_title_game_price_value = 'ルデヤでの各ゲーム機の買取値段推移（値のみ）.csv'
 data_frame = pandas.read_csv(csv_title_game_price_value, header=0, encoding=enc)
 
-FIG_W = 55
+FIG_W = 75
 plot.rcParams["figure.figsize"] = (FIG_W, 5)
 
 fig = plot.figure()
@@ -99,7 +99,7 @@ plot.xlabel('日時')
 plot.savefig('rudeya_Switch.png', bbox_inches='tight', pad_inches=0)
 plot.close()
 
-fig = plot.figure(figsize=(FIG_W//3, 5))
+fig = plot.figure() #plot.figure(figsize=(FIG_W//3, 5))
 plot.plot(data_frame['date']+data_frame['hour'], data_frame['Switch有機ELホワイト'], '.-c', label='SwitchOLED White')
 plot.plot(data_frame['date']+data_frame['hour'], data_frame['Switch有機ELネオン'], '.-m', label='SwitchOLED Neon')
 plot.xticks(days_plot, label_list, fontsize=FONT_SIZE)
