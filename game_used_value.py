@@ -100,18 +100,24 @@ columns_sort = ['date',
 
 # 更新前のcsvファイルを読み込む
 data_frame = pandas.read_csv(csv_title_game_price, header=0, encoding=enc)
-# 読み込んだデータフレームに今回取得したデータを入れる
-add_data_frame = data_frame.append(game_price_dic, ignore_index=True)
-# 新規にデータフレームを作るので、項目でソートする
-add_data_frame.reindex(columns=columns_sort)
-# ファイルに書き込む
-add_data_frame.to_csv(csv_title_game_price, index=None, encoding=enc)
+last_column = data_frame.iloc[-1]
+
+if last_column['date'] != today or last_column['hour'] != now_hour:
+    # 読み込んだデータフレームに今回取得したデータを入れる
+    add_data_frame = data_frame.append(game_price_dic, ignore_index=True)
+    # 新規にデータフレームを作るので、項目でソートする
+    add_data_frame.reindex(columns=columns_sort)
+    # ファイルに書き込む
+    add_data_frame.to_csv(csv_title_game_price, index=None, encoding=enc)
 
 # 更新前のcsvファイルを読み込む
 data_frame_value = pandas.read_csv(csv_title_game_price_value, header=0, encoding=enc)
-# 読み込んだデータフレームに今回取得したデータを入れる
-add_value_df = data_frame_value.append(game_price_value_dic, ignore_index=True)
-# 新規にデータフレームを作るので、項目でソートする
-add_value_df.reindex(columns=columns_sort)
-# ファイルに書き込む
-add_value_df.to_csv(csv_title_game_price_value, index=None, encoding=enc)
+last_column = data_frame_value.iloc[-1]
+
+if last_column['date'] != today or last_column['hour'] != now_hour: 
+    # 読み込んだデータフレームに今回取得したデータを入れる
+    add_value_df = data_frame_value.append(game_price_value_dic, ignore_index=True)
+    # 新規にデータフレームを作るので、項目でソートする
+    add_value_df.reindex(columns=columns_sort)
+    # ファイルに書き込む
+    add_value_df.to_csv(csv_title_game_price_value, index=None, encoding=enc)
